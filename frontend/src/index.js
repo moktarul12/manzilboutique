@@ -10,8 +10,7 @@ import App from './App';
 
 // TODO: move axios to separate instance. This is temporary
 import axios from 'axios';
-//axios.defaults.baseURL = 'https://be-fashion-shop.onrender.com/';
-axios.defaults.baseURL = '/';
+axios.defaults.baseURL = window.location.href.includes('localhost')? 'http://localhost:3001/': '/';
 
 ReactDOM.render(
   <Provider store={store}>
