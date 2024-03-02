@@ -13,21 +13,12 @@
     "data:destroy": "node backend/seeder -d",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && cd frontend && yarn install && yarn run build && cd ..  && yarn install",
+    "build": "cd frontend && yarn install && yarn run build && cd ..  && yarn install",
     "start:production": "env-cmd -f .env npm run build && env-cmd -f .env node backend/server"
 
     
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/phongduybui/cybershop-ecommerce.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/phongduybui/cybershop-ecommerce/issues"
-  },
-  "homepage": "https://github.com/phongduybui/cybershop-ecommerce#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
