@@ -46,23 +46,21 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 // Note: Uncomment when you pre-build frontend and serve/proxy request through server
 
- if (true) {
-     app.use(express.static(path.join(__dirname, '../frontend/build')));
-     app.get('*', (req, res) =>
-     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
-   );
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '/frontend/build')));
+
+//   app.get('*', (req, res) =>
+//     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+//   );
+// }
 
 app.get('fe', (req, res) =>
      res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
 );
 
-console.log("__dirname===========================")
 
-
-console.log(__dirname)
 app.get('*', (req, res) =>
-     res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'))
+     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
 );
 
 app.use(notFound);
