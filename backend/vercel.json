@@ -1,12 +1,10 @@
 {
-    "version":2,
-    "builds": [
+   "version": 2,
+   "name": "fashion-album",
+   "builds": [
       { "src": "*.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-        {
-          "src": "/(.*)",
-          "dest": "/"
-        }
-    ]
-  }
+   ],
+   "routes": [
+      { "src": "/(.*)", "dest": "/" }
+   ]
+}
